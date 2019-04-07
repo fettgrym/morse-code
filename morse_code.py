@@ -1,7 +1,6 @@
 def encode(message):
 # Function that encodes your string
-
-	morse_code = {
+	morse_code = morse_code = {
 	"A": ".-",
 	"B": "-...",
 	"C": "-.-.",
@@ -49,7 +48,7 @@ def encode(message):
 	for x in message:
 		encoded_msg = encoded_msg + morse_code[x] + " "
 # Takes your message imput and turns it into morse code
-
+	
 	return encoded_msg
 # Returns the morse code
 
@@ -116,14 +115,23 @@ def decode(secret):
 	return decoded_msg
 # Returns a decoded message
 
+def learn():
+# Function to learn morse code
+	
+	pass
+
 if __name__ == "__main__":
 # Execute test-program if started from original file
+	learn()
 
+
+"""
 	secret = encode("Hello World")
 	nosecret = decode(secret)
 # Defines secret as the string with the morse code
 
-	print("Hello World = " + secret + "\n")
+	print(nosecret + " = " + secret + "\n")
 	print(secret + "= " + nosecret)
 	print('\nTo import this to your own python project do "from morse_code import *"')
 # Prints the morse code and instructions
+"""
