@@ -44,9 +44,12 @@ def encode(message):
 	message = message.upper()
 	encoded_msg = ""
 # Makes you massage in all CAPS, and creates an empy string
-
-	for x in message:
-		encoded_msg = encoded_msg + morse_code[x] + " "
+	try:
+		for x in message:
+			encoded_msg = encoded_msg + morse_code[x] + " "
+	except KeyError:
+		print(" Invalid caracters! ".center(51, "*").upper())
+		encoded_msg = "fail!"
 # Takes your message imput and turns it into morse code
 	
 	return encoded_msg
@@ -122,16 +125,11 @@ def learn():
 
 if __name__ == "__main__":
 # Execute test-program if started from original file
-	learn()
-
-
-"""
 	secret = encode("Hello World")
 	nosecret = decode(secret)
 # Defines secret as the string with the morse code
+	if nosecret and secret != "fail!":
+		print(nosecret + " = " + secret + "\n")
+		print(secret + "= " + nosecret)
 
-	print(nosecret + " = " + secret + "\n")
-	print(secret + "= " + nosecret)
-	print('\nTo import this to your own python project do "from morse_code import *"')
-# Prints the morse code and instructions
-"""
+# Prints the morse code
